@@ -24,7 +24,7 @@ import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Role;
-import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.evolvedmc.discordsync.Main;
 
@@ -51,16 +51,21 @@ public class Discord extends ListenerAdapter implements CommandExecutor, Listene
 	
 	@SuppressWarnings("deprecation")
 	private void startBot() {
+		JDABuilder builder = new JDABuilder(AccountType.BOT);
+		String token = plugin.getConfig().getString("bot-token");
+		builder.setToken(token);
 		try {
-			jda = new JDABuilder(AccountType.BOT).setToken(plugin.getConfig().getString("bot-token")).buildBlocking();
-		} catch (LoginException | InterruptedException e) {
+			builder.buildAsync();
+		} catch (LoginException e) {
 			e.printStackTrace();
 		}
-	}
+}
 	
 	@Override
-	public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
-		if(e.getAuthor().isBot()||e.getAuthor().isFake()||e.isWebhookMessage())return;
+	public void onMessageReceived(MessageReceivedEvent e) {
+		if(e.getAuthor().isBot()||e.getAuthor().isFake()||e.isWebhookMessage()) {
+			return;
+		}
 		String[] args = e.getMessage().getContentRaw().split(" ");
 		if(args[0].equalsIgnoreCase("!link")) {
 			if(e.getMember().getRoles().stream().filter(role -> role.getName().equals("123")).findAny().orElse(null) != null) {
@@ -74,9 +79,10 @@ public class Discord extends ListenerAdapter implements CommandExecutor, Listene
 			Player target = Bukkit.getPlayer(args[1]);
 			if(target==null) {
 				e.getChannel().sendMessage(":x: Error! The player needs to be online!").queue();
+				return;
 			}
 			String verifycode = new Random().nextInt(800000)+200000+"EV";
-			uuidCodeMap.put(target.getUniqueId(),verifycode);
+			uuidCodeMap.put(target.getUniqueId(), verifycode);
 			uuidIdMap.put(target.getUniqueId(), e.getAuthor().getId());
 			e.getAuthor().openPrivateChannel().complete().sendMessage("Your verification code has been generated!\n Execute this command in game to verify your account: /verify "+verifycode).queue();;
 		}

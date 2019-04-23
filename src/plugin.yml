@@ -3,7 +3,6 @@ author: [Luuk/Highbanana]
 version: 1.0
 main: net.evolvedmc.discordsync.Main
 description: A plugin to sync things between discord and minecraft
-depend: [AlonsoJDA]
 
 commands:
   verify:
