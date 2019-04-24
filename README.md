@@ -12,3 +12,4 @@ Todo:
 - Make a unsync option
 - Make the messages fancy
 - Fix the classes
+- Fix the placeholders
