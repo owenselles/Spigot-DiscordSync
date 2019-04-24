@@ -10,3 +10,4 @@ Todo:
 - Finish with bungee
 - Implement SQL option
 - Make a unsync option
+- Make the messages fancy
