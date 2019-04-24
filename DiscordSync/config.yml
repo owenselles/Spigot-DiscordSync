@@ -1,3 +1,36 @@
+# Placeholders:
+# %key% = Random generated key the players gets
+# %dname% = discord name
+# %mname% = minecraft name
+#
+# Notes:
+# Make sure the bots has the right permissions
+# - Nickname change to members
+# - Role edit/add/remove
+
+# discord bot token to control the bot
 bot-token: "NTcwNjc5OTQ3MTkwOTkyOTEz.XMCuQQ.1-_c1WYZvHYcJWGh9d4RdkBk_Zw"
-Role-id: "570230452955250689"
-Role-name: "123"
+
+# the role the discord bot needs to add to the player after he got verified
+Role-name: "naked"
+
+# Messages the discord bot/minecraft bot/console sends
+Messages:
+  Discord:
+    Already-Verified: ":x: Error! You are already verified!"
+	Specify-Player: ":x: Error! You need to specify a player!"
+  	Offline-Player: ":x: Error! The player needs to be online!"
+  	Generated-Key: "Your verification code has been generated!\n Execute this command in game to verify your account: /verify %key%"
+  	Verified-Succesfully: "You've been verified succesfully :)"
+  Minecraft:
+    No-Console: "Only players can execute this command!"
+    Already-Verified: "Error! You are already verified!"
+    No-Pending: "Not pending verification process!"
+    Usage: "Usage: /verify [code]"
+    Invalid-Key: "Code is invalid! Please try again!"
+    Not-Connected: ":x: Error! It seems that you are not connected to the discord server!"    
+  	
+# Command player uses to link his minecraft account
+Command:
+  Discord: "!link"
+  

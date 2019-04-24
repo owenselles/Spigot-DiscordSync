@@ -9,6 +9,3 @@ commands:
   verify:
     usage: /verify [code]
     description: main discordsync command!
-  DChat:
-    usage: /DChat [message]
-    description: a command to allow players to chat in discord over minecraft!
