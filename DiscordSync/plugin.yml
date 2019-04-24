@@ -1,0 +1,14 @@
+name: DiscordSync
+author: [Luuk/Highbanana]
+version: 1.0
+main: spigot.net.evolvedmc.discordsync.Main
+description: A plugin to sync things between discord and minecraft
+depend: [DiscordJDA]
+
+commands:
+  verify:
+    usage: /verify [code]
+    description: main discordsync command!
+  DChat:
+    usage: /DChat [message]
+    description: a command to allow players to chat in discord over minecraft!
