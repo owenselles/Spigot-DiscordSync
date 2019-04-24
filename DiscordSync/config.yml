@@ -18,10 +18,10 @@ Role-name: "naked"
 Messages:
   Discord:
     Already-Verified: ":x: Error! You are already verified!"
-      Specify-Player: ":x: Error! You need to specify a player!"
-      Offline-Player: ":x: Error! The player needs to be online!"
-      Generated-Key: "Your verification code has been generated!\n Execute this command in game to verify your account: /verify %key%"
-      Verified-Succesfully: "You've been verified succesfully :)"
+    Specify-Player: ":x: Error! You need to specify a player!"
+    Offline-Player: ":x: Error! The player needs to be online!"
+    Generated-Key: "Your verification code has been generated!\n Execute this command in game to verify your account: /verify %key%"
+    Verified-Succesfully: "You've been verified succesfully :)"
   Minecraft:
     No-Console: "Only players can execute this command!"
     Already-Verified: "Error! You are already verified!"
