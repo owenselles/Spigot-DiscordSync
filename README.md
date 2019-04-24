@@ -11,3 +11,4 @@ Todo:
 - Implement SQL option
 - Make a unsync option
 - Make the messages fancy
+- Fix the classes
