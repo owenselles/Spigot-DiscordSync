@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import bungee.spigot.net.evolvedmc.discordsync.discord.Discord;
 import bungee.spigot.net.evolvedmc.discordsync.discord.Join;
 import bungee.spigot.net.evolvedmc.discordsync.discord.Leave;
+import bungee.spigot.net.evolvedmc.discordsync.discord.Verify;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.Guild;
 import net.md_5.bungee.api.ProxyServer;

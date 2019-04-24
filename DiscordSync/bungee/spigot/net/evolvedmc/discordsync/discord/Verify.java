@@ -9,7 +9,7 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class Verify extends Command {
 	
-	protected Verify() {
+	public Verify() {
 		super("Verify");
 	}
 
